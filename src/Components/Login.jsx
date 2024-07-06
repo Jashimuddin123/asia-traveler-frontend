@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+// import { Link, Navigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 const Login = () => {
     const {signInUser,googleLogin} = useContext(AuthContext)
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -27,15 +28,17 @@ const Login = () => {
   };
 
 //   google login functionlity
-const handleGoggle = () =>{
+const handleGoogleLogin = () => {
     googleLogin()
-    .then(result=>{
+      .then(result => {
         console.log(result.user);
-    })
-    .catch(error=>{
-        console.log(error.message);
-    })
-}
+        // Navigate(form, { replace: true });
+     
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -93,7 +96,7 @@ const handleGoggle = () =>{
             Register
           </Link>
         </p>
-        <button className="btn btn-accent" onClick={handleGoggle}>Google</button>
+        <button className="btn btn-accent" onClick={handleGoogleLogin}>Google</button>
       </div>
     
     </div>

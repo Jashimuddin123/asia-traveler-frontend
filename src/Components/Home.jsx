@@ -1,11 +1,13 @@
-import Login from "./Login";
+import BannerSlider from "./Bannner";
+
+
 
 
 
 const Home = () => {
     return (
         <div>
-            <h1>this is home</h1>
+        <BannerSlider></BannerSlider>
              {/* <Login></Login> */}
              
         </div>

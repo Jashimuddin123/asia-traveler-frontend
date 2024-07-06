@@ -10,12 +10,19 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Root from './Root/Root.jsx';
 import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
+import NotFound from './NotFount/NotFound.jsx';
+import Home from './Components/Home.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<NotFound></NotFound>,
     children:[
+      {
+        path:'/',
+        element:<Home></Home>
+      },
       {
         path:'/login',
         element:<Login></Login>

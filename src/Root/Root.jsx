@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Login from "../Components/Login";
-import Register from "../Components/Register";
-import Home from "../Components/Home";
+// import Login from "../Components/Login";
+// import Register from "../Components/Register";
+// import Home from "../Components/Home";
+import Navbar from "../Components/Navbar";
 
 
 const Root = () => {
     return (
         <div>
-           <Home></Home>
+             <Navbar></Navbar>
            <Outlet></Outlet>
            
             

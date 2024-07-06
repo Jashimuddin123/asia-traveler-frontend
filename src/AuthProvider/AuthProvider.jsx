@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/Firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth/cordova";
@@ -31,6 +31,12 @@ const signInUser = (email, password)=>{
     return signInWithPopup(auth, googleProvider)
      }
 
+     //  logut 
+const logOut = () =>{
+    // setLoading(false)
+    setUser(null)
+    signOut(auth)
+}
 
 
    // Observer
@@ -51,7 +57,9 @@ const signInUser = (email, password)=>{
         // Your travel information here
         createUser,
         signInUser,
-        googleLogin
+        googleLogin,
+        logOut,
+        user
 
     };
 
