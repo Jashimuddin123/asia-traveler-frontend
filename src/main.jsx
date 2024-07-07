@@ -12,6 +12,7 @@ import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
 import NotFound from './NotFount/NotFound.jsx';
 import Home from './Components/Home.jsx';
+import AddTourist from './Components/AddTourist.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path: "/addTourist",
+        element: <AddTourist></AddTourist>
       }
     ]
   },

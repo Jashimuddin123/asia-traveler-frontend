@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
         <BannerSlider></BannerSlider>
-             {/* <Login></Login> */}
+            
              
         </div>
     );

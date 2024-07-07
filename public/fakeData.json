@@ -1,0 +1,75 @@
+[
+    {
+      "image": "https://i.ibb.co/cvVt1rS/9225.jpg",
+      "tourists_spot_name": "Great Wall of China",
+      "country_name": "Banglades",
+      "location_short_description": "Ancient wall stretching across northern China.",
+      "average_cost": 300,
+      "seasonality": "Spring",
+      "travel_time": "10 days",
+      "total_visitors_per_year": 10000000,
+      "user_email": "user1@example.com",
+      "user_name": "John Doe"
+    },
+    {
+      "image": "https://i.ibb.co/TvCQCWg/1009.jpg",
+      "tourists_spot_name": "Taj Mahal",
+      "country_name": "Thailand",
+      "location_short_description": "Marble mausoleum and UNESCO World Heritage site.",
+      "average_cost": 200,
+      "seasonality": "Autumn",
+      "travel_time": "4 days",
+      "total_visitors_per_year": 8000000,
+      "user_email": "user2@example.com",
+      "user_name": "Jane Smith"
+    },
+    {
+      "image": "https://i.ibb.co/GQCxYXQ/27189.jpg",
+      "tourists_spot_name": "Mount Fuji",
+      "country_name": "Indonesia",
+      "location_short_description": "Iconic volcanic mountain and popular hiking destination.",
+      "average_cost": 150,
+      "seasonality": "Summer",
+      "travel_time": "3 days",
+      "total_visitors_per_year": 5000000,
+      "user_email": "user3@example.com",
+      "user_name": "Alice Johnson"
+    },
+    {
+      "image": "https://i.ibb.co/2KwKdY7/3727.jpg",
+      "tourists_spot_name": "Petra",
+      "country_name": "Malaysia",
+      "location_short_description": "Historic city carved into pink sandstone cliffs.",
+      "average_cost": 250,
+      "seasonality": "Spring",
+      "travel_time": "5 days",
+      "total_visitors_per_year": 900000,
+      "user_email": "user4@example.com",
+      "user_name": "Robert Brown"
+    },
+    {
+      "image": "https://i.ibb.co/d6bx08G/10546.jpg",
+      "tourists_spot_name": "Angkor Wat",
+      "country_name": "Vietnam",
+      "location_short_description": "Largest religious monument in the world.",
+      "average_cost": 100,
+      "seasonality": "Winter",
+      "travel_time": "4 days",
+      "total_visitors_per_year": 2500000,
+      "user_email": "user5@example.com",
+      "user_name": "Emily Davis"
+    },
+    {
+      "image": "https://i.ibb.co/FgBZxq2/266.jpg",
+      "tourists_spot_name": "Burj Khalifa",
+      "country_name": "Cambodia",
+      "location_short_description": "Tallest building in the world with stunning views.",
+      "average_cost": 500,
+      "seasonality": "Fall",
+      "travel_time": "2 days",
+      "total_visitors_per_year": 1500000,
+      "user_email": "user6@example.com",
+      "user_name": "Michael Wilson"
+    }
+  ]
+  

@@ -16,7 +16,13 @@ const Navbar = () => {
       <li className="mr-2 font-semibold text-md">
         <NavLink to="/aboutUs">All Tourists Spot</NavLink>
       </li>
-
+      <li className="mr-2 font-semibold text-md">
+        <NavLink to="/register">Register</NavLink>
+      </li>
+      <li className="mr-2 font-semibold text-md">
+        <NavLink to="/addTourist">Add Tourist Spot</NavLink>
+      </li>
+       
     </>
   );
 
@@ -83,9 +89,12 @@ const Navbar = () => {
           </ul>
           
 
-        </div> :   <Link to="/login"> <button className="px-6 py-2 rounded text-white bg-red-900">Login</button> </Link>
+        </div> :   <Link to="/login"> <button className="px-6 py-2 rounded text-white bg-red-900">Login</button> </Link>  
+   
       }
+      
 </div>
+<button className="bg-orange-600 text-white px-4 rounded py-2 mr-10 ml-10 ">01820339433</button>
              
       </div>
       
