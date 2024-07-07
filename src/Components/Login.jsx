@@ -57,6 +57,7 @@ const handleGoogleLogin = () => {
             type="email"
             id="email"
             name="email"
+             placeholder="Write Your Email"
             {...register("email", { required: true })}
             required
           />
