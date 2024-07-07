@@ -18,10 +18,10 @@ const TouristSpotsSection = () => {
         <p>Loading...</p>
       ) : (
         <ul>
-          <div className="grid grid-cols-3 mx-auto max-w-5xl">
+          <div className="grid grid-cols-3 mx-auto max-w-5xl h-[700px]">
             {touristSpots.slice(0, 6).map((spot, index) => (
               <li key={index}>
-                <div className="card bg-base-100 w-96 shadow-xl">
+                <div className="card bg-base-100 w-80 shadow-xl gap-y-4">
                   <figure className="px-10 pt-10">
                     <img
                       src={spot.photo_url}
@@ -39,13 +39,17 @@ const TouristSpotsSection = () => {
                 </div>
                 {/* Add other fields as necessary */}
               </li>
+              
             ))}
+            
             <Link to="/allTouristSpot">
               <button className=" w-44 mx-auto  btn btn-warning ">
-                Vew all
+                View All Tourist Spot
               </button>
             </Link>
+   
           </div>
+         
         </ul>
       )}
     </div>

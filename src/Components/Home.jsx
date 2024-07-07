@@ -7,7 +7,7 @@ import TouristSpotsSection from "./TouristSpotsSection";
 
 const Home = () => {
     return (
-        <div>
+        <div >
         <BannerSlider></BannerSlider>
           <TouristSpotsSection></TouristSpotsSection>  
              

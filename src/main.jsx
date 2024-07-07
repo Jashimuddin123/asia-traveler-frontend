@@ -49,7 +49,8 @@ const router = createBrowserRouter([
       },
       {
         path:"/touristDetails/:id",
-        element: <TouristDetails></TouristDetails>
+        element: <TouristDetails></TouristDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/touristSpots/${params.id}`)
       }
     ]
   },
