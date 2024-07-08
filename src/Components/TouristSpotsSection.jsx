@@ -15,7 +15,7 @@ const TouristSpotsSection = () => {
     <div>
       <h2 className="text-5xl text-center"> {touristSpots.length}</h2>
       {touristSpots.length === 0 ? (
-        <p>Loading...</p>
+        <p className="text-5xl text-center font-bold">Loading...</p>
       ) : (
         <ul>
           <div className="grid grid-cols-3 mx-auto max-w-5xl h-[700px]">
