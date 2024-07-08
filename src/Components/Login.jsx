@@ -1,13 +1,15 @@
-// import { Link, Navigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { ImGithub } from "react-icons/im";
+
 const Login = () => {
-    const {signInUser,googleLogin} = useContext(AuthContext)
-    const [passwordVisible, setPasswordVisible] = useState(false);
-  //  useform hooks
+  const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -15,25 +17,30 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     const { email, password } = data;
     signInUser(email, password)
       .then(result => {
         console.log(result.user);
-       
       })
       .catch(error => {
         console.log(error);
       });
   };
 
-//   google login functionlity
-const handleGoogleLogin = () => {
+  const handleGoogleLogin = () => {
     googleLogin()
       .then(result => {
         console.log(result.user);
-        // Navigate(form, { replace: true });
-     
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then(result => {
+        console.log(result.user);
       })
       .catch(error => {
         console.log(error);
@@ -57,16 +64,18 @@ const handleGoogleLogin = () => {
             type="email"
             id="email"
             name="email"
-             placeholder="Write Your Email"
+            placeholder="Write Your Email"
             {...register("email", { required: true })}
-            required
           />
-             {errors.email && <span className="text-lg  text-red-800">This field is required</span>}
+          {errors.email && <span className="text-lg text-red-800">This field is required</span>}
           <br />
           <br />
 
           <div className="relative">
-            <label className="text-xl font-semibold" htmlFor="password">Password</label> <br />
+            <label className="text-xl font-semibold" htmlFor="password">
+              Password:
+            </label>
+            <br />
             <input
               type={passwordVisible ? "text" : "password"}
               name="password"
@@ -77,7 +86,7 @@ const handleGoogleLogin = () => {
             <span className="absolute right-3 top-12 cursor-pointer" onClick={togglePasswordVisibility}>
               {passwordVisible ? <FaEyeSlash /> : <FaEye />}
             </span>
-            {errors.password && <span className="text-lg  text-red-800">This field is required</span>}
+            {errors.password && <span className="text-lg text-red-800">This field is required</span>}
           </div>
           <br />
 
@@ -90,16 +99,21 @@ const handleGoogleLogin = () => {
 
         <p className="my-4 text-lg">
           If you do not register? please{" "}
-          <Link
-            className="text-blue-800 underline font-semibold"
-            to="/register"
-          >
+          <Link className="text-blue-800 underline font-semibold" to="/register">
             Register
           </Link>
         </p>
-        <button className="btn btn-accent" onClick={handleGoogleLogin}>Google</button>
+        <div className="flex gap-4">
+          <button className="px-8 py-2 rounded border flex items-center gap-4" onClick={handleGoogleLogin}>
+            <FcGoogle />
+            Sign in With Google
+          </button>
+          <button className="px-8 py-2 rounded border flex items-center gap-4" onClick={handleGithubLogin}>
+            <ImGithub />
+            Sign in With GitHub
+          </button>
+        </div>
       </div>
-    
     </div>
   );
 };
