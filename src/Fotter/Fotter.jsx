@@ -1,4 +1,7 @@
-import React from 'react';
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { IoLogoYoutube } from "react-icons/io";
+
 
 const Footer = () => {
     return (
@@ -10,9 +13,9 @@ const Footer = () => {
                             <h2 className="text-yellow-400 text-xl font-bold">Asian Travelar</h2>
                             <p className="mt-4">Find Us On</p>
                             <div className="flex mt-4 space-x-4">
-                                <a href="#"><img src="facebook-icon.png" alt="Facebook" className="w-6 h-6" /></a>
-                                <a href="#"><img src="twitter-icon.png" alt="Twitter" className="w-6 h-6" /></a>
-                                <a href="#"><img src="instagram-icon.png" alt="Instagram" className="w-6 h-6" /></a>
+                                <a href="https://www.facebook.com"><FaFacebook  className="text-blue-600  rounded-full bg-white text-xl"/></a>
+                                <a href="https://www.youtube.com"><IoLogoYoutube className="rounded-full bg-white  text-red-600 text-xl"/></a>
+                                <a href="https://www.instagram.com"><FaInstagram className="text-red-600 text-xl"/></a>
                             </div>
                         </div>
                         <div className="w-full md:w-1/5 mb-6">
@@ -47,7 +50,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="border-t border-white mt-8 pt-6 text-center">
-                        <p>&copy; 2024 ExploreAsia. All rights reserved.</p>
+                        <p>&copy; 2024 Explore Asian Traveler. All rights reserved.</p>
                     </div>
                 </div>
             </footer>

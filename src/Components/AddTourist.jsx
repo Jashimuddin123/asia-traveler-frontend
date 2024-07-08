@@ -1,7 +1,10 @@
 
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
+import { AuthContext } from '../AuthProvider/AuthProvider';
 const AddTourist = () => {
+    const {user} = useContext(AuthContext)
     // react useform hooks 
     const {
         register,
@@ -11,13 +14,16 @@ const AddTourist = () => {
       } = useForm();
     
     const onSubmit = (data) => {
-        console.log(data);
+
+        const email = user.email
+        const spot= {data,email}
+        console.log('spot user email data',spot);
         fetch('http://localhost:5000/touristSpots',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(spot)
         })
 
         .then(res=> res.json())
@@ -50,6 +56,18 @@ const AddTourist = () => {
                                 {...register('tourist_spot_name', { required: true })}
                             />
                             {errors.tourist_spot_name && <p className="text-red-500 text-sm">This field is required</p>}
+                        </div>
+                        <div className="col-span-1">
+                            <label className="block mb-2 text-sm font-medium text-gray-700">Email </label>
+                            {/* <input 
+                                type="email" 
+                                name="email" 
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
+                                    placeholder={user.email}
+                                {...register('email', { required: true})}
+                       
+                            /> */}
+                            {errors.email && <p className="text-red-500 text-sm">This field is required</p>}
                         </div>
                         <div className="col-span-1">
                             <label className="block mb-2 text-sm font-medium text-gray-700">Country Name</label>

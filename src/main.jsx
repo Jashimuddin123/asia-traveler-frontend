@@ -13,9 +13,10 @@ import Register from './Components/Register.jsx';
 import NotFound from './NotFount/NotFound.jsx';
 import Home from './Components/Home.jsx';
 import AddTourist from './Components/AddTourist.jsx';
-import MyList from './Components/MyList.jsx';
+
 import AllTouristSpot from './Components/AllTouristSpot.jsx';
 import TouristDetails from './Components/TouristDetails.jsx';
+import MyList from './Components/MyList.jsx';
 
 const router = createBrowserRouter([
   {
