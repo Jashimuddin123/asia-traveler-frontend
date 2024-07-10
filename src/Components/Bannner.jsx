@@ -1,48 +1,121 @@
-
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
 const BannerSlider = () => {
-    return (
-        <div className='max-w-6xl mx-auto mt-20'>
-            <Swiper
-             // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={200}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-    >
-      <SwiperSlide>
-        <img className=' w-full h-[400px] mt-12  mx-auto rounded mb-6'
-         src="https://i.ibb.co/XxR31z9/ammie-ngo-vcu-OZBxx-Rk-unsplash.jpg" alt=""  />
-      </SwiperSlide>
-      <SwiperSlide>
-      <img className=' w-full mt-12   h-[400px] mx-auto rounded'
-       src="https://i.ibb.co/yqQ56FH/joshua-earle-87-Jy-Mb9-Zf-U-unsplash.jpg" alt=""   />
-      </SwiperSlide>
-      <SwiperSlide>
-      <img className=' w-full mt-12  h-[400px] mx-auto rounded'
-       src="https://i.ibb.co/fkvDLtN/shifaaz-shamoon-qtb-V-8-P-Ksk-unsplash.jpg" alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-      <img className=' w-full mt-12  h-[400px] mx-auto rounded'
-       src="https://i.ibb.co/8N7W1tS/Whats-App-Image-2024-07-05-at-23-59-29-246a4e73.jpg" alt=""/>
-      </SwiperSlide>
-      ...
-    </Swiper>
-        </div>
-    );
+  return (
+    <div className="max-w-6xl mx-auto mt-20">
+      <Swiper
+        // install Swiper modules
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={200}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+      >
+        <SwiperSlide>
+          <div className="relative">
+            <img
+              className="w-full h-[450px] mt-12 mx-auto rounded mb-6"
+              src="https://i.ibb.co/yqQ56FH/joshua-earle-87-Jy-Mb9-Zf-U-unsplash.jpg"
+              alt=""
+            />
+            <div className="absolute top-0 left-0 w-full p-6">
+              <p className="text-4xl font-mono font-extralight text-white">
+                Destination Dreaming: <br />
+                <span className="text-red-600">Plan Your Perfect Getaway</span>
+              </p>
+              <button className="mt-4 bg-blue-900 px-8 py-4 rounded text-white">
+                Explore
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative">
+            <img
+              className="w-full h-[450px] mt-12 mx-auto rounded mb-6"
+              src="https://i.ibb.co/XxR31z9/ammie-ngo-vcu-OZBxx-Rk-unsplash.jpg"
+              alt=""
+            />
+            <div className="absolute top-0 left-0 w-full p-6">
+              <p className="text-4xl font-mono font-extralight text-white">
+                Destination Dreaming: <br />
+                <span className="text-red-600">Plan Your Perfect Getaway</span>
+              </p>
+              <button className="mt-4 bg-blue-900 px-8 py-4 rounded text-white">
+                Explore
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        {/* <SwiperSlide>
+                <div className='relative'>
+                        <img 
+                            className='w-full h-[450px] mt-12 mx-auto rounded mb-6'
+                            src="https://i.ibb.co/jrd20hG/136716819-85b0f772-a5c2-4fa3-8305-f84e64fb3a24.jpg" 
+                            alt="" 
+                        />
+                        <div className='absolute top-0 left-0 w-full p-6'>
+                            <p className='text-4xl font-mono font-extralight text-white'>
+                                Destination Dreaming: <br /> 
+                                <span className='text-red-600'>Plan Your Perfect Getaway</span>
+                            </p> 
+                            <button className='mt-4 bg-blue-900 px-8 py-4 rounded text-white'>
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+                </SwiperSlide> */}
+        <SwiperSlide>
+          <div className="relative">
+            <img
+              className="w-full h-[450px] mt-12 mx-auto rounded mb-6"
+              src="https://i.ibb.co/QPH6mRw/465.jpg"
+              alt=""
+            />
+            <div className="absolute top-0 left-0 w-full p-6">
+              <p className="text-4xl font-mono font-extralight text-white">
+                Destination Dreaming: <br />
+                <span className="text-red-600">Plan Your Perfect Getaway</span>
+              </p>
+              <button className="mt-4 bg-blue-900 px-8 py-4 rounded text-white">
+                Explore
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative">
+            <img
+              className="w-full h-[450px] mt-12 mx-auto rounded mb-6"
+              src="https://i.ibb.co/2s14GkX/654.jpg"
+              alt=""
+            />
+            <div className="absolute top-0 left-0 w-full p-6">
+              <p className="text-4xl font-mono font-extralight text-white">
+                Destination Dreaming: <br />
+                <span className="text-red-600">Plan Your Perfect Getaway</span>
+              </p>
+              <button className="mt-4 bg-blue-900 px-8 py-4 rounded text-white">
+                Explore
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        ...
+      </Swiper>
+    </div>
+  );
 };
 
 export default BannerSlider;

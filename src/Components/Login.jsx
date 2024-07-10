@@ -69,6 +69,10 @@ const Login = () => {
 
   return (
     <div>
+
+
+
+
       <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label className="text-xl font-semibold" htmlFor="email">
