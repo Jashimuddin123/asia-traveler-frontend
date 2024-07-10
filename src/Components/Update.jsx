@@ -1,68 +1,79 @@
-
-import { useContext } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
 import Swal from "sweetalert2";
-import { AuthContext } from '../AuthProvider/AuthProvider';
-const AddTourist = () => {
-    const {user} = useContext(AuthContext)
+
+const Update = () => {
+    const initialData = useLoaderData();
+    const [loadedData, setLoadedData] = useState(initialData);
+
+    console.log('loadedData here', loadedData);
+
     // react useform hooks 
     const {
         register,
         handleSubmit,
-        // watch,
         formState: { errors },
-      } = useForm();
-    
-    const onSubmit = (data) => {
-     
-        const email = user.email
-        const spot= {...data,email}
-        console.log('spot user email data',data);
-        fetch('http://localhost:5000/touristSpots',{
-            method: 'POST',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(spot)
-        })
+    } = useForm();
 
-        .then(res=> res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.insertedId){         
+    const onSubmit = async (data) => {
+        console.log('data update', data);
+        try {
+            const response = await fetch(`http://localhost:5000/touristSpots/${loadedData._id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            if (response.ok) {
+                // alert('Successfully Updated');
                 Swal.fire({
-                  icon: "success",
-                  title: "Success!",
-                  text: " added succssfully",
+                    icon: 'success',
+                    title: 'Success!',
+                    text: ' Updated successfully',
                  confirmButtonText: "Cool"
                 });
+                
+            
+                console.log(result);
+                // Fetch the updated data and update the state
+                const updatedResponse = await fetch(`http://localhost:5000/touristSpots/${loadedData._id}`);
+                const updatedData = await updatedResponse.json();
+                setLoadedData(updatedData);
+            } else {
+                console.error('Update failed:', result);
             }
-        })
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return (
         <div className="bg-gray-100 p-6">
             <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <h2 className="text-2xl font-bold mb-6">Add Tourist Spot</h2>
+                <h2 className="text-2xl font-bold mb-6">Update Tourist Spot</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="grid grid-cols-2 gap-6">
                         <div className="col-span-1">
                             <label className="block mb-2 text-sm font-medium text-gray-700">Tourist Spot Name</label>
                             <input 
                                 type="text" 
-                                name="tourist_spot_name" 
+                       
+                                defaultValue={loadedData.tourist_spot_name}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Tourist Spot Name" 
                                 {...register('tourist_spot_name', { required: true })}
                             />
                             {errors.tourist_spot_name && <p className="text-red-500 text-sm">This field is required</p>}
                         </div>
-                        
+                 
                         <div className="col-span-1">
                             <label className="block mb-2 text-sm font-medium text-gray-700">Country Name</label>
                             <input 
                                 type="text" 
-                                name="country_name" 
+                                defaultValue={loadedData.country_name}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Country Name" 
                                 {...register('country_name', { required: true })}
@@ -73,7 +84,7 @@ const AddTourist = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-700">Location</label>
                             <input 
                                 type="text" 
-                                name="location" 
+                                defaultValue={loadedData.location}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Location" 
                                 {...register('location', { required: true })}
@@ -84,7 +95,7 @@ const AddTourist = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-700">Average Cost</label>
                             <input 
                                 type="text" 
-                                name="average_cost" 
+                                defaultValue={loadedData.average_cost}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Average Cost" 
                                 {...register('average_cost', { required: true })}
@@ -94,11 +105,11 @@ const AddTourist = () => {
                         <div className="col-span-1">
                             <label className="block mb-2 text-sm font-medium text-gray-700">Seasonality</label>
                             <select 
-                                name="seasonality" 
+                                defaultValue={loadedData.seasonality}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 {...register('seasonality', { required: true })}
                             >
-                                <option value="" disabled selected>Seasonality</option>
+                                <option value="" disabled>Seasonality</option>
                                 <option value="summer">Summer</option>
                                 <option value="winter">Winter</option>
                                 <option value="spring">Spring</option>
@@ -110,7 +121,7 @@ const AddTourist = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-700">Photo URL</label>
                             <input 
                                 type="text" 
-                                name="photo_url" 
+                                defaultValue={loadedData.photo_url}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Photo URL" 
                                 {...register('photo_url', { required: true })}
@@ -121,7 +132,7 @@ const AddTourist = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-700">Travel Time</label>
                             <input 
                                 type="number" 
-                                name="travel_time" 
+                                defaultValue={loadedData.travel_time}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Travel Time" 
                                 {...register('travel_time', { required: true })}
@@ -132,7 +143,7 @@ const AddTourist = () => {
                             <label className="block mb-2 text-sm font-medium text-gray-700">Total Visitors Per Year</label>
                             <input 
                                 type="number" 
-                                name="total_visitors" 
+                                defaultValue={loadedData.total_visitors}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Total Visitors Per Year" 
                                 {...register('total_visitors', { required: true })}
@@ -142,7 +153,7 @@ const AddTourist = () => {
                         <div className="col-span-2">
                             <label className="block mb-2 text-sm font-medium text-gray-700">Short Description</label>
                             <textarea 
-                                name="short_description" 
+                                defaultValue={loadedData.short_description}
                                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" 
                                 placeholder="Short Description" 
                                 {...register('short_description', { required: true })}
@@ -152,9 +163,9 @@ const AddTourist = () => {
                         <div className="col-span-2">
                             <button 
                                 type="submit" 
-                                className="w-full bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                                className="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                             >
-                                Add Tourist Spot
+                              Update
                             </button>
                         </div>
                     </div>
@@ -164,4 +175,4 @@ const AddTourist = () => {
     );
 };
 
-export default AddTourist;
+export default Update;

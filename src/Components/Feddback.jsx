@@ -37,33 +37,29 @@ const Feddback = () => {
                     }}
                 >
                     <SwiperSlide>
-                        <img className='w-full h-[400px] mt-12 mx-auto rounded mb-6'
-                            src="https://i.ibb.co/XxR31z9/ammie-ngo-vcu-OZBxx-Rk-unsplash.jpg" alt="" />
+                        <img className='w-96 h-[300px] mt-12 mx-auto rounded mb-6'
+                            src="https://i.ibb.co/5GzpW2c/traveler1-png.jpg" alt="" />
+                            <h2>Smita jerin</h2>
+                            <p>Fassional Designer</p>
+                    </SwiperSlide>
+                    <SwiperSlide className='shadow-2xl'>
+                        <img className='w-96 mt-12 h-[300px] mx-auto rounded'
+                            src="https://i.ibb.co/qFHKKD9/traveler2-png.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className='w-full mt-12 h-[400px] mx-auto rounded'
-                            src="https://i.ibb.co/yqQ56FH/joshua-earle-87-Jy-Mb9-Zf-U-unsplash.jpg" alt="" />
+                        <img className='w-96 mt-12 h-[300px] mx-auto rounded'
+                            src="https://i.ibb.co/HrpjTZS/traveler3-png.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className='w-full mt-12 h-[400px] mx-auto rounded'
-                            src="https://i.ibb.co/fkvDLtN/shifaaz-shamoon-qtb-V-8-P-Ksk-unsplash.jpg" alt="" />
+                        <img className='w-96 mt-12 h-[300px] mx-auto rounded'
+                            src="https://i.ibb.co/bRL7pKv/travel4-png.jpg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className='w-full mt-12 h-[400px] mx-auto rounded'
+                        <img className='w-96 mt-12 h-[300px] mx-auto rounded'
                             src="https://i.ibb.co/8N7W1tS/Whats-App-Image-2024-07-05-at-23-59-29-246a4e73.jpg" alt="" />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <img className='w-full mt-12 h-[400px] mx-auto rounded'
-                            src="https://i.ibb.co/8N7W1tS/Whats-App-Image-2024-07-05-at-23-59-29-246a4e73.jpg" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img className='w-full mt-12 h-[400px] mx-auto rounded'
-                            src="https://i.ibb.co/8N7W1tS/Whats-App-Image-2024-07-05-at-23-59-29-246a4e73.jpg" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img className='w-full mt-12 h-[400px] mx-auto rounded'
-                            src="https://i.ibb.co/8N7W1tS/Whats-App-Image-2024-07-05-at-23-59-29-246a4e73.jpg" alt="" />
-                    </SwiperSlide>
+                 
+               
                     ...
                 </Swiper>
             </div>

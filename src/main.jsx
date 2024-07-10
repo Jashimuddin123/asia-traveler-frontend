@@ -17,6 +17,8 @@ import AddTourist from './Components/AddTourist.jsx';
 import AllTouristSpot from './Components/AllTouristSpot.jsx';
 import TouristDetails from './Components/TouristDetails.jsx';
 import MyList from './Components/MyList.jsx';
+import Update from './Components/Update.jsx';
+import Private from './PrivateRouter/Private.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,11 +40,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/addTourist",
-        element: <AddTourist></AddTourist>
+        element: <Private>
+          <AddTourist></AddTourist>
+        </Private>
       },
       {
         path: "/mylist",
-        element: <MyList></MyList>
+        element: <Private>
+          <MyList></MyList>
+        </Private>
       },
       {
      path: "/allTouristSpot",
@@ -52,7 +58,13 @@ const router = createBrowserRouter([
         path:"/touristDetails/:id",
         element: <TouristDetails></TouristDetails>,
         loader: ({params}) => fetch(`http://localhost:5000/touristSpots/${params.id}`)
+      },
+      {
+        path:"/update/:id",
+        element:<Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5000/touristSpots/${params.id}`)
       }
+
     ]
   },
  

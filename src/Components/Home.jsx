@@ -12,7 +12,7 @@ import WhyChose from "./WhyChose";
 
 const Home = () => {
     return (
-        <div >
+        <div className="max-w-7xl mx-auto" >
         <BannerSlider></BannerSlider>
         <ServiceCard></ServiceCard>
           <TouristSpotsSection></TouristSpotsSection>  

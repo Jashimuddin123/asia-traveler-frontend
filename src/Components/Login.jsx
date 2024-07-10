@@ -5,6 +5,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
@@ -19,30 +20,45 @@ const Login = () => {
   const onSubmit = (data) => {
     const { email, password } = data;
     signInUser(email, password)
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful!",
+          text: "You have successfully logged in.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        // Optionally, you can redirect the user after successful login
+        // history.push('/dashboard'); // Assuming you have history available
       })
-      .catch(error => {
-        console.log(error);
+      .catch((error) => {
+        console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: error.message,
+          showConfirmButton: true,
+        });
       });
   };
 
   const handleGoogleLogin = () => {
     googleLogin()
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
 
   const handleGithubLogin = () => {
     githubLogin()
-      .then(result => {
+      .then((result) => {
         console.log(result.user);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };

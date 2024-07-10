@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { toast,  } from 'react-toastify';
+// import { toast,  } from 'react-toastify';
 
 import {Helmet} from "react-helmet";
+import Swal from "sweetalert2";
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState("");
@@ -20,14 +21,26 @@ const Register = () => {
     const { email, password } = data;
 
     createUser(email, password)
-      .then(result => {
-        console.log(result.user);
-        toast.success("User created successfully!");
-      })
-      .catch(error => {
-        setRegisterError(error.message);
-        toast.error(error.message);
+    .then(result => {
+      console.log(result.user);
+      Swal.fire({
+        icon: 'success',
+        title: 'Registration Successful!',
+        text: 'User created successfully',
+        showConfirmButton: false,
+        timer: 1500
       });
+    })
+    .catch(error => {
+      setRegisterError(error.message);
+      Swal.fire({
+        icon: 'error',
+        title: 'Registration Failed',
+        text: error.message,
+        showConfirmButton: true,
+      });
+    });
+  
   };
 
   return (
