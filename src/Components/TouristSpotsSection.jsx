@@ -8,7 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 
 const TouristSpotsSection = () => {
-  const [touristSpots, setTouristSpots] = useState([]);
+  const [touristSpots,  setTouristSpots] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/touristSpots")
@@ -18,8 +18,8 @@ const TouristSpotsSection = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-5xl text-center mb-6">{touristSpots.length}</h2>
+    <div className="container mx-auto p-4 mt-10">
+      <h1 className="text-3xl font-bold ml-10 my-4">Favourite Tour Place</h1>
       {touristSpots.length === 0 ? (
         <p className="text-5xl text-center font-bold">Loading...</p>
       ) : (
@@ -29,16 +29,17 @@ const TouristSpotsSection = () => {
               <div className="card bg-base-100 w-full h-80 shadow-xl">
                 <figure className="px-10 pt-10">
                   <img 
-                  className="w-72 h-96 rounded-xl"
+                  className="w-72 h-96 rounded"
                     src={spot.photo_url}
                     alt={spot.tourist_spot_name}
-                   
+                    
                   />
+                  
                 </figure>
                 <div className="card-body items-center text-center">
                 <p className="text-3xl mt-0 font-bold ">{spot.tourist_spot_name}</p>
          
-                  {/* <h2 className="card-title">{spot.country_name}</h2> */}
+                  <h2 className="card-title">#{spot.country_name}</h2>
             
                      <span className="flex gap-3 items-center "> 
                           <p><FaLocationDot /></p>

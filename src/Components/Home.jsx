@@ -1,10 +1,11 @@
 
 import BannerSlider from "./Bannner";
 import Feddback from "./Feddback";
+import Gallery from "./Gallery";
 import PopularCountry from "./PopularCountry";
 import ServiceCard from "./ServiceCard";
 import TouristSpotsSection from "./TouristSpotsSection";
-import WhyChose from "./WhyChose";
+
 
 
 
@@ -18,7 +19,8 @@ const Home = () => {
           <TouristSpotsSection></TouristSpotsSection>  
           <Feddback></Feddback>
           <PopularCountry></PopularCountry>
-          <WhyChose></WhyChose>
+          {/* <WhyChose></WhyChose> */}
+          <Gallery></Gallery>
          
              
         </div>

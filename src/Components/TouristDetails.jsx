@@ -7,15 +7,15 @@ const TouristDetails = () => {
   console.log("loader data", loadedDetails);
   return (
     <div>
-      <div className="flex gap-6 ">
+      <div className="flex flex-col lg:flex-row px-6 gap-6 ">
         {/* fisrt card */}
         <div className="flex-2">
           <img
-            className="w-[800px] rounded"
+            className="w-[700px] rounded"
             src={loadedDetails.photo_url}
             alt=""
           />
-             {/* div */}
+           
              <div className="flex  justify-between mt-4">
                <span className="ml-4">
                <p className="text-4xl text-blue-900 font-semibold">{loadedDetails.tourist_spot_name}</p>
@@ -65,14 +65,7 @@ const TouristDetails = () => {
                     <th className="border p-4">{loadedDetails.location}</th>
                   </tr>
                 </thead>
-                {/* <tbody>
-            <tr>
-                <td className="border p-4">Row 1, Cell 1</td>
-                <td className="border p-4">Row 1, Cell 2</td>
-                
-            </tr>
            
-        </tbody> */}
               </table>
             </div>
           </div>

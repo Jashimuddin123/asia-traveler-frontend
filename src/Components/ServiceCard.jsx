@@ -11,7 +11,7 @@ const ServiceCard = () => {
 
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-5xl mx-auto mt-10">
       <h1 className="text-3xl font-bold mb-6 text-center">Our Services</h1>
          <div className="grid lg:grid-cols-4">
             <div className="flex items-center gap-3">
@@ -20,8 +20,8 @@ const ServiceCard = () => {
                     <MdFlight />
                 </span>
                 <span>
-                    <p>Chep Flight</p>
-                    <p>Lorem ipsum dolor sit !</p>
+                    <p className="text-xl font-semibold">Chep Flight</p>
+                    <p className="text-gray-600">Cheap Flights Under $99 </p>
                 </span>
             </div>
             <div className="flex items-center gap-3">
@@ -30,18 +30,18 @@ const ServiceCard = () => {
                     <FcOnlineSupport />
                 </span>
                 <span>
-                    <p>Eassy Suport</p>
-                    <p>Lorem ipsum dolor sit !</p>
+                    <p className="text-xl font-semibold">Eassy Suport</p>
+                    <p className="text-gray-600">We Provide Best Support</p>
                 </span>
             </div>
             <div className="flex items-center gap-3">
-            <span className="w-12 h-12 rounded-full bg-yellow-300 text-black
+            <span className="w-12 h-12 rounded-full bg-green-500 text-black
                 text-center text-4xl flex justify-center items-center">
                     <FaBusinessTime />
                 </span>
                 <span>
-                    <p>Eassy Bokking</p>
-                    <p>Lorem ipsum dolor sit !</p>
+                    <p className="text-xl font-semibold">Eassy Bokking</p>
+                    <p className="text-gray-600">You Can Alwayes Book</p>
                 </span>
             </div>
             <div className="flex items-center gap-3" >
@@ -50,8 +50,8 @@ const ServiceCard = () => {
                     <FaBusAlt />
                 </span>
                 <span>
-                    <p>Travel Option</p>
-                    <p>Lorem ipsum dolor sit !</p>
+                    <p className="text-xl font-semibold">Travel Option</p>
+                    <p className="text-gray-600">Differnt  options we have</p>
                 </span>
             </div>
             

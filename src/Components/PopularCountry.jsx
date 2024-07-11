@@ -11,7 +11,7 @@ const PopularCountry = () => {
 
     return (
         <div className="max-w-6xl mx-auto mt-20 p-4">
-            <p className="text-4xl text-center mb-8"> {popular.length}</p>
+
             <h1 className="text-3xl font-bold mb-8 text-center">Articles you might like</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
