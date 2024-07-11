@@ -80,7 +80,7 @@ const MyList = () => {
               MyList
             </title>
           </Helmet>
-            <h1>My List</h1>
+       
             <table className="table-auto w-full">
                 <thead>
                     <tr>

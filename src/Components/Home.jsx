@@ -16,7 +16,7 @@ const Home = () => {
     return (
          <div>
           <Helmet>
-            <title className="text-xl font-bold">
+            <title className="text-xl font-semiboldbold">
               Home
             </title>
           </Helmet>
