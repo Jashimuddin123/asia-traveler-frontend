@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet";
 import BannerSlider from "./Bannner";
 import Feddback from "./Feddback";
 import Gallery from "./Gallery";
@@ -13,7 +14,13 @@ import TouristSpotsSection from "./TouristSpotsSection";
 
 const Home = () => {
     return (
-        <div className="max-w-7xl mx-auto" >
+         <div>
+          <Helmet>
+            <title className="text-xl font-bold">
+              Home
+            </title>
+          </Helmet>
+           <div className="max-w-7xl mx-auto" >
         <BannerSlider></BannerSlider>
         <ServiceCard></ServiceCard>
           <TouristSpotsSection></TouristSpotsSection>  
@@ -24,6 +31,7 @@ const Home = () => {
          
              
         </div>
+         </div>
     );
 };
 

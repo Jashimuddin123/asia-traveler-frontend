@@ -20,6 +20,7 @@ import MyList from './Components/MyList.jsx';
 import Update from './Components/Update.jsx';
 import Private from './PrivateRouter/Private.jsx';
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/touristDetails/:id",
-        element: <TouristDetails></TouristDetails>,
+        element: <Private><TouristDetails></TouristDetails></Private>,
         loader: ({params}) => fetch(`http://localhost:5000/touristSpots/${params.id}`)
       },
       {
@@ -73,7 +74,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <AuthProvider>
+
+
   <RouterProvider router={router} />
+
+      
   </AuthProvider>
   </React.StrictMode>,
 )

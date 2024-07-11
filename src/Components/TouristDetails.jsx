@@ -1,12 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { BiSolidOffer } from "react-icons/bi";
+import { Helmet } from "react-helmet";
 
 const TouristDetails = () => {
   const loadedDetails = useLoaderData();
   console.log("loader data", loadedDetails);
   return (
     <div>
+        <Helmet>
+            <title>
+                Details
+            </title>
+        </Helmet>
       <div className="flex flex-col lg:flex-row px-6 gap-6 ">
         {/* fisrt card */}
         <div className="flex-2">

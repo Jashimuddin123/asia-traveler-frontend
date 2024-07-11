@@ -12,7 +12,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 const BannerSlider = () => {
   return (
-    <div className="max-w-6xl mx-auto mt-20">
+    <div className="max-w-6xl mx-auto mt-20 lg:mt-10">
       <Swiper
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -76,24 +76,7 @@ const BannerSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* <SwiperSlide>
-                <div className='relative'>
-                        <img 
-                            className='w-full h-[450px] mt-12 mx-auto rounded mb-6'
-                            src="https://i.ibb.co/jrd20hG/136716819-85b0f772-a5c2-4fa3-8305-f84e64fb3a24.jpg" 
-                            alt="" 
-                        />
-                        <div className='absolute top-0 left-0 w-full p-6'>
-                            <p className='text-4xl font-mono font-extralight text-white'>
-                                Destination Dreaming: <br /> 
-                                <span className='text-red-600'>Plan Your Perfect Getaway</span>
-                            </p> 
-                            <button className='mt-4 bg-blue-900 px-8 py-4 rounded text-white'>
-                                Explore
-                            </button>
-                        </div>
-                    </div>
-                </SwiperSlide> */}
+        
         <SwiperSlide>
           <div className="relative">
             <img

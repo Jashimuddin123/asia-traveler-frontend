@@ -5,13 +5,14 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('inside firebase',import.meta.env.VITE_PASS);
 const firebaseConfig = {
-  apiKey: "AIzaSyBrs8rx18riKipWzasnZIcGkQETP60uazA",
-  authDomain: "asian-traveler-website.firebaseapp.com",
-  projectId: "asian-traveler-website",
-  storageBucket: "asian-traveler-website.appspot.com",
-  messagingSenderId: "1081025689071",
-  appId: "1:1081025689071:web:ca263df2ec56620612321a"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from "sweetalert2";
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet';
 const AddTourist = () => {
     const {user} = useContext(AuthContext)
     // react useform hooks 
@@ -41,7 +42,13 @@ const AddTourist = () => {
     };
 
     return (
-        <div className="bg-gray-100 p-6">
+    <div>
+        <Helmet>
+            <title>
+                AddTourist
+            </title>
+        </Helmet>
+            <div className="bg-gray-100 p-6">
             <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold mb-6">Add Tourist Spot</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -161,6 +168,7 @@ const AddTourist = () => {
                 </form>
             </div>
         </div>
+    </div>
     );
 };
 

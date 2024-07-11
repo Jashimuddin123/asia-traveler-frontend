@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 const AllTouristSpot = () => {
   const [allTourist, setAllTourist] = useState([]);
   console.log('all tourist here', allTourist);
@@ -12,7 +13,12 @@ const AllTouristSpot = () => {
   }, []);
 
   return (
-    <div className="px-4">
+    <div>
+      <Helmet>
+        <title>
+          AllTourist
+        </title>
+      </Helmet>
       <h1 className="text-3xl md:text-5xl text-center font-bold my-6">All tourist spot here</h1>
 
       <div className="grid grid-cols-1  gap-6 mx-auto max-w-5xl">

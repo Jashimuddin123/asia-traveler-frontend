@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end flex items-center">
+      <div className="navbar-end flex flex-col lg:flex-row items-center">
         {user?.email ? (
           <div className="dropdown dropdown-end">
             <button tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -72,7 +72,7 @@ const Navbar = () => {
             </button>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu  menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <button className="btn btn-sm btn-ghost text-red-800">ADNAN</button>
@@ -89,7 +89,7 @@ const Navbar = () => {
             <button className="px-6 py-2 rounded text-white bg-red-900">Login</button>
           </Link>
         )}
-        <button className="bg-orange-600 text-white px-4 rounded py-2 ml-4">
+        <button className="bg-orange-600 text-white px-4 rounded py-2 mt-2 lg:mt-0 lg:ml-4">
           01820339433
         </button>
       </div>

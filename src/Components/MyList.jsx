@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
@@ -74,6 +75,11 @@ const MyList = () => {
 
     return (
         <div>
+              <Helmet>
+            <title className="text-xl font-bold">
+              MyList
+            </title>
+          </Helmet>
             <h1>My List</h1>
             <table className="table-auto w-full">
                 <thead>

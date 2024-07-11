@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { ImGithub } from "react-icons/im";
 import Swal from "sweetalert2";
-
+import {Helmet} from "react-helmet";
 const Login = () => {
   const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -71,7 +71,11 @@ const Login = () => {
     <div>
 
 
-
+<Helmet>
+  <title>
+    login
+  </title>
+</Helmet>
 
       <div className="lg:w-2/4 md:w-2/4 mx-auto shadow-2xl p-10 mt-12">
         <form onSubmit={handleSubmit(onSubmit)}>
