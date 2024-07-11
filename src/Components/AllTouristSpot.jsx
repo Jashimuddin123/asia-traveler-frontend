@@ -7,7 +7,7 @@ const AllTouristSpot = () => {
   console.log('all tourist here', allTourist);
 
   useEffect(() => {
-    fetch("http://localhost:5000/touristSpots")
+    fetch("https://asia-travel-server.vercel.app/touristSpots")
       .then((res) => res.json())
       .then((data) => setAllTourist(data));
   }, []);

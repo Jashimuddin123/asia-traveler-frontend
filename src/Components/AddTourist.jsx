@@ -19,7 +19,7 @@ const AddTourist = () => {
         const email = user.email
         const spot= {...data,email}
         console.log('spot user email data',data);
-        fetch('http://localhost:5000/touristSpots',{
+        fetch('https://asia-travel-server.vercel.app/touristSpots',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

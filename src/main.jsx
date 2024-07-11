@@ -58,12 +58,12 @@ const router = createBrowserRouter([
       {
         path:"/touristDetails/:id",
         element: <Private><TouristDetails></TouristDetails></Private>,
-        loader: ({params}) => fetch(`http://localhost:5000/touristSpots/${params.id}`)
+        loader: ({params}) => fetch(`https://asia-travel-server.vercel.app/touristSpots/${params.id}`)
       },
       {
         path:"/update/:id",
         element:<Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/touristSpots/${params.id}`)
+        loader: ({params}) => fetch(`https://asia-travel-server.vercel.app/touristSpots/${params.id}`)
       }
 
     ]

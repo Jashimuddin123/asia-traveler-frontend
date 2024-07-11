@@ -14,7 +14,7 @@ const MyList = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/touristSpots?email=${user.email}`)
+            fetch(`https://asia-travel-server.vercel.app/touristSpots?email=${user.email}`)
                 .then(res => {
                     if (!res.ok) {
                         throw new Error('Network response was not ok');
@@ -36,7 +36,7 @@ const MyList = () => {
             cancelButtonText: 'No, keep it'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/touristSpots/${id}`, {
+                fetch(`https://asia-travel-server.vercel.app/touristSpots/${id}`, {
                     method: 'DELETE',
                 })
                 .then(res => res.json())

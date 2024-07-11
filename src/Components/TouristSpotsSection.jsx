@@ -11,7 +11,7 @@ const TouristSpotsSection = () => {
   const [touristSpots,  setTouristSpots] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/touristSpots")
+    fetch("https://asia-travel-server.vercel.app/touristSpots")
       .then((response) => response.json())
       .then((data) => setTouristSpots(data))
       .catch((error) => console.error("Error fetching data:", error));

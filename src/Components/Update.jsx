@@ -20,7 +20,7 @@ const Update = () => {
     const onSubmit = async (data) => {
         console.log('data update', data);
         try {
-            const response = await fetch(`http://localhost:5000/touristSpots/${loadedData._id}`, {
+            const response = await fetch(`https://asia-travel-server.vercel.app/touristSpots/${loadedData._id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
@@ -40,7 +40,7 @@ const Update = () => {
             
                 console.log(result);
                 // Fetch the updated data and update the state
-                const updatedResponse = await fetch(`http://localhost:5000/touristSpots/${loadedData._id}`);
+                const updatedResponse = await fetch(`https://asia-travel-server.vercel.app/touristSpots/${loadedData._id}`);
                 const updatedData = await updatedResponse.json();
                 setLoadedData(updatedData);
             } else {
