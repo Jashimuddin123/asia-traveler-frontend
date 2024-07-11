@@ -65,7 +65,7 @@ const Navbar = () => {
             <button tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img
-                  src="https://lh3.googleusercontent.com/a/ACg8ocJc7wKqPMCQLn6jwrRnztkwnqj9U3Y15M6EhPDYm392fM0SLNpK=s576-c-no"
+                  src={user?.photoURL}
                   alt="User Avatar"
                 />
               </div>
